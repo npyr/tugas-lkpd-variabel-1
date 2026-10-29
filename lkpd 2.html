@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKPD JavaScript - Naila</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #0369a1 40%, #0284c7 70%, #38bdf8 100%);
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-border: rgba(255, 255, 255, 0.4);
+      --primary-ocean: #0284c7;
+      --deep-ocean: #0f172a;
+      --sky-light: #e0f2fe;
+      --sky-border: #bae6fd;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --accent-cyan: #06b6d4;
+      --code-bg: #0f172a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px 12px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+    }
+
+    .header-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(224, 242, 254, 0.9));
+      text-align: center;
+      border-top: 5px solid var(--primary-ocean);
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--sky-border);
+    }
+
+    .id-item { text-align: center; }
+    .id-label { font-size: 11px; text-transform: uppercase; color: var(--primary-ocean); font-weight: 700; letter-spacing: 0.5px; }
+    .id-value { font-size: 15px; font-weight: 700; color: var(--deep-ocean); }
+
+    h1 { font-size: 24px; font-weight: 800; color: var(--deep-ocean); margin-bottom: 6px; }
+    h2 { font-size: 18px; color: #0369a1; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid var(--sky-border); padding-bottom: 8px; }
+    h3 { font-size: 14px; font-weight: 700; color: var(--deep-ocean); margin: 12px 0 6px 0; }
+    p { margin-bottom: 10px; font-size: 14px; color: var(--text-main); }
+
+    .table-container { overflow-x: auto; margin: 14px 0; border-radius: 12px; border: 1px solid var(--sky-border); }
+    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13px; text-align: left; }
+    th { background: #0284c7; color: #fff; padding: 10px 12px; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--sky-light); }
+    tr:nth-child(even) { background: #f8fafc; }
+
+    pre, code { font-family: 'Fira Code', monospace; }
+    pre { background: var(--code-bg); color: #e2e8f0; padding: 14px; border-radius: 10px; overflow-x: auto; font-size: 13px; margin: 10px 0; }
+    .keyword { color: #38bdf8; font-weight: 600; }
+    .string { color: #7dd3fc; }
+    .number { color: #f472b6; }
+    .comment { color: #94a3b8; font-style: italic; }
+
+    .answer-box {
+      background: #f0f9ff;
+      border-left: 4px solid var(--primary-ocean);
+      padding: 12px 14px;
+      border-radius: 0 10px 10px 0;
+      margin: 10px 0;
+      font-size: 13.5px;
+    }
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; background: var(--sky-light); color: var(--primary-ocean); }
+    
+    @media (max-width: 600px) {
+      .identity-grid { grid-template-columns: 1fr; gap: 8px; }
+      .glass-card { padding: 16px; }
+      h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- HEADER IDENTITAS -->
+  <div class="glass-card header-card">
+    <span class="badge">LKPD JAVASCRIPT</span>
+    <h1>B. LKPD - INPUT, OUTPUT & OPERATOR</h1>
+    <p style="font-size: 13px; color: var(--text-muted);">Paket Pembelajaran JavaScript - SMKN 1 GARUT Dasar-Dasar PPLG</p>
+    
+    <div class="identity-grid">
+      <div class="id-item">
+        <div class="id-label">Nama</div>
+        <div class="id-value">Naila</div>
+      </div>
+      <div class="id-item">
+        <div class="id-label">Kelas</div>
+        <div class="id-value">X PPLG 2</div>
+      </div>
+      <div class="id-item">
+        <div class="id-label">Tanggal</div>
+        <div class="id-value">28 Oktober</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PETUNJUK -->
+  <div class="glass-card">
+    <h2>📌 Petunjuk pengerjaan</h2>
+    <ul style="padding-left: 20px; font-size: 13.5px; color: var(--text-muted);">
+      <li>Kerjakan berurutan.</li>
+      <li>Jalankan setiap kode dan amati hasilnya.</li>
+      <li>Pahami fungsi setiap baris, jangan sekadar menyalin.</li>
+      <li>Jika error, baca pesan error dan cari penyebabnya.</li>
+      <li>Diskusikan bagian yang sulit dengan pasangan/kelompok.</li>
+    </ul>
+  </div>
+
+  <!-- AKTIVITAS 1 -->
+  <div class="glass-card">
+    <h2>🌊 Aktivitas 1 - Prediksi</h2>
+    <pre><code><span class="keyword">let</span> a = <span class="number">10</span>;
+<span class="keyword">let</span> b = <span class="number">5</span>;
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);</code></pre>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Operasi</th>
+            <th>Prediksi</th>
+            <th>Hasil Sebenarnya</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>a + b</code></td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td><code>a - b</code></td>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td><code>a * b</code></td>
+            <td>50</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td><code>a / b</code></td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="answer-box">
+      <strong>Apakah prediksi kamu benar?</strong> <span class="badge" style="background:#0284c7; color:#fff;">✓ Ya</span> Sebagian / Tidak<br>
+      <strong>Mengapa?</strong> Karena operasi matematika dasar dalam JavaScript berjalan sesuai standar aturan aritmatika penjumlahan (+), pengurangan (-), perkalian (*), dan pembagian (/).
+    </div>
+  </div>
+<img src="Screenshot_20261028-122559.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 2 -->
+  <div class="glass-card">
+    <h2>🧪 Aktivitas 2 - Eksperimen</h2>
+    <pre><code><span class="keyword">let</span> a = <span class="number">20</span>;
+<span class="keyword">let</span> b = <span class="number">4</span>;
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);</code></pre>
+    
+    <div class="answer-box">
+      <strong>Prediksi:</strong><br>
+      <code>a + b = 24</code> | <code>a - b = 16</code> | <code>a * b = 80</code> | <code>a / b = 5</code> | <code>a % b = 0</code>
+    </div>
+
+    <div class="answer-box">
+      <strong>Apa yang kamu temukan?</strong><br>
+      Operator <code>%</code> (modulo) digunakan untuk mendapatkan sisa hasil bagi. Karena 20 dibagi 4 hasilnya tepat 5 tanpa sisa, maka <code>20 % 4</code> menghasilkan 0.
+    </div>
+  </div>
+  <img src="Screenshot_20261028-122730.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+
+  <!-- AKTIVITAS 3 -->
+  <div class="glass-card">
+    <h2>💬 Aktivitas 3 - Input dengan prompt()</h2>
+    <pre><code><span class="keyword">let</span> nama = prompt(<span class="string">"Masukkan nama:"</span>);
+console.log(nama);
+<span class="keyword">let</span> umur = prompt(<span class="string">"Masukkan umur:"</span>);
+console.log(umur);</code></pre>
+
+    <div class="answer-box">
+      <strong>Apa fungsi prompt()?</strong><br>
+      Fungsi <code>prompt()</code> berguna untuk menampilkan dialog box interaktif yang meminta input berupa teks dari pengguna, lalu menyimpan teks yang diketikkan ke dalam variabel.
+    </div>
+  </div>
+<img src="Screenshot_20261028-123542.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 4 -->
+  <div class="glass-card">
+    <h2>⏳ Aktivitas 4 - Menghitung Umur</h2>
+    <pre><code><span class="keyword">let</span> tahunLahir = prompt(<span class="string">"Masukkan tahun lahir:"</span>);
+<span class="keyword">let</span> tahunSekarang = <span class="number">2026</span>;
+<span class="keyword">let</span> umur = tahunSekarang - tahunLahir;
+console.log(umur);</code></pre>
+
+    <div class="answer-box">
+      <strong>Uji dengan tahun lahir kamu:</strong><br>
+      Uji coba misal tahun lahir 2010: <code>Umur = 16 tahun</code> (2026 - 2010).
+    </div>
+  </div>
+<img src="Screenshot_20261028-123812.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 5 -->
+  <div class="glass-card">
+    <h2>🛒 Aktivitas 5 - Mesin Kasir Mini</h2>
+    <pre><code><span class="keyword">let</span> harga = prompt(<span class="string">"Masukkan harga:"</span>);
+<span class="keyword">let</span> jumlah = prompt(<span class="string">"Masukkan jumlah:"</span>);
+<span class="keyword">let</span> total = harga * jumlah;
+console.log(total);</code></pre>
+ <div class="answer-box">
+      <strong>Uji:</strong> Harga = 5000, Jumlah = 4<br>
+      <strong>Total = Rp 20.000</strong> (5000 * 4).
+    </div>
+  </div>
+  <img src="Screenshot_20261028-124107.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 6 -->
+  <div class="glass-card">
+    <h2>🤝 Aktivitas 6 - Think Pair Share</h2>
+    <div class="answer-box">
+      <strong>THINK:</strong> Mengapa membutuhkan variabel <code>total</code>?<br>
+      Agar nilai perhitungan (<code>harga * jumlah</code>) tersimpan rapi di memori sehingga dapat digunakan kembali atau ditampilkan berulang kali tanpa perlu menghitung ulang dari awal.
+    </div>
+    <div class="answer-box">
+      <strong>PAIR:</strong> Jawaban sama? <span class="badge" style="background:#0284c7; color:#fff;">✓ Ya</span> / Tidak
+    </div>
+    <div class="answer-box">
+      <strong>SHARE: Kesimpulan kelompok:</strong><br>
+      Penggunaan variabel penampung seperti <code>total</code> membuat struktur penulisan kode lebih efisien, bersih, serta mudah dalam proses debugging maupun pengembangan program.
+    </div>
+  </div>
+
+  <!-- AKTIVITAS 7 -->
+  <div class="glass-card">
+    <h2>🏪 Aktivitas 7 - Challenge: Warung Digital</h2>
+    <p>Program dasar Warung Digital:</p>
+    <pre><code><span class="keyword">let</span> makanan = prompt(<span class="string">"Nama makanan:"</span>);
+<span class="keyword">let</span> harga = Number(prompt(<span class="string">"Harga:"</span>));
+<span class="keyword">let</span> jumlah = Number(prompt(<span class="string">"Jumlah:"</span>));
+<span class="keyword">let</span> total = harga * jumlah;
+
+console.log(<span class="string">"Makanan:"</span>, makanan);
+console.log(<span class="string">"Harga:"</span>, harga);
+console.log(<span class="string">"Jumlah:"</span>, jumlah);
+console.log(<span class="string">"Total:"</span>, total);</code></pre>
+
+    <p style="margin-top: 14px;"><strong>Pengembangan dengan Diskon 10%:</strong></p>
+    <pre><code><span class="keyword">let</span> diskon = total * (<span class="number">10</span> / <span class="number">100</span>);
+<span class="keyword">let</span> bayar = total - diskon;
+
+console.log(<span class="string">"Total:"</span>, total);
+console.log(<span class="string">"Diskon (10%):"</span>, diskon);
+console.log(<span class="string">"Total Bayar:"</span>, bayar);</code></pre>
+  </div>
+<img src="Screenshot_20261028-135443.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 8 -->
+  <div class="glass-card">
+    <h2>🐞 Aktivitas 8 - Debugging</h2>
+    <p><strong>Kode Awal (Error):</strong></p>
+    <pre><code><span class="keyword">let</span> harga = <span class="number">5000</span>;
+<span class="keyword">let</span> jumlah = <span class="number">3</span>;
+<span class="keyword">let</span> total = harga harga; <span class="comment">// Error sintaks / perkalian hilang</span>
+console.log(total harga); <span class="comment">// Error sintaks penulisan</span></code></pre>
+
+    <div class="answer-box">
+      <strong>Kesalahan:</strong>
+      <ol style="padding-left: 18px; margin-top: 4px;">
+        <li>Baris perhitungan <code>let total = harga harga;</code> kekurangan operator perkalian <code>*</code> dan salah menyebutkan variabel <code>jumlah</code>.</li>
+        <li>Baris output <code>console.log(total harga);</code> kekurangan tanda koma <code>,</code> atau pemisah argumen.</li>
+      </ol>
+    </div>
+
+    <p style="margin-top: 10px;"><strong>Perbaikan Kode:</strong></p>
+    <pre><code><span class="keyword">let</span> harga = <span class="number">5000</span>;
+<span class="keyword">let</span> jumlah = <span class="number">3</span>;
+<span class="keyword">let</span> total = harga * jumlah;
+console.log(total);</code></pre>
+  </div>
+<img src="Screenshot_20261028-140306.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- AKTIVITAS 9 -->
+  <div class="glass-card">
+    <h2>💰 Aktivitas 9 - Challenge Mandiri: Kalkulator Tabungan</h2>
+    <p>Program menghitung total tabungan:</p>
+    <pre><code><span class="keyword">let</span> uangAwal = Number(prompt(<span class="string">"Masukkan uang awal:"</span>));
+<span class="keyword">let</span> hari1 = Number(prompt(<span class="string">"Tabungan hari pertama:"</span>));
+<span class="keyword">let</span> hari2 = Number(prompt(<span class="string">"Tabungan hari kedua:"</span>));
+<span class="keyword">let</span> hari3 = Number(prompt(<span class="string">"Tabungan hari ketiga:"</span>));
+
+<span class="keyword">let</span> totalTabungan = uangAwal + hari1 + hari2 + hari3;
+console.log(<span class="string">"Total tabungan = Rp"</span> + totalTabungan);</code></pre>
+    <div class="answer-box">
+      <strong>Output Contoh:</strong> Total tabungan = Rp [Hasil Penjumlahan]
+    </div>
+  </div>
+<img src="Screenshot_20261028-141924.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- BAHAN AJAR SUMMARY -->
+  <div class="glass-card">
+    <h2>📖 C. Rangkuman Bahan Ajar</h2>
+    <ul style="padding-left: 20px; font-size: 13.5px;">
+      <li><strong>Variable:</strong> Tempat menyimpan data (contoh: <code>let nama = "Budi";</code>).</li>
+      <li><strong>Alur Program:</strong> INPUT → PROCESS → OUTPUT.</li>
+      <li><strong>prompt():</strong> Menerima input teks. Ubah ke angka menggunakan <code>Number()</code>.</li>
+      <li><strong>Operator Aritmatika:</strong> <code>+</code> (tambah), <code>-</code> (kurang), <code>*</code> (kali), <code>/</code> (bagi), <code>%</code> (modulo/sisa bagi).</li>
+    </ul>
+  </div>
+
+  <!-- ASESMEN FORMATIF -->
+  <div class="glass-card">
+    <h2>📝 D. Asesmen Formatif</h2>
+    <ol style="padding-left: 18px; font-size: 13.5px;">
+      <li style="margin-bottom: 8px;">
+         Apa output dari <code>let a=8; let b=2; console.log(a+b);</code>?
+        <div class="answer-box">Jawaban: <strong>10</strong></div>
+      </li>
+      <li style="margin-bottom: 8px;">
+         Apa output dari <code>let a=10; let b=3; console.log(a % b);</code>?
+        <div class="answer-box">Jawaban: <strong>1</strong></div>
+      </li>
+      <li style="margin-bottom: 8px;">
+         Apa fungsi prompt()?
+        <div class="answer-box">Jawaban: <strong>Menerima input dari pengguna melalui dialog box interaktif dalam browser.</strong></div>
+      </li>
+      <li>
+         Buat program menghitung luas persegi panjang (p=10, l=5).
+        <pre><code><span class="keyword">let</span> panjang = <span class="number">10</span>;
+<span class="keyword">let</span> lebar = <span class="number">5</span>;
+<span class="keyword">let</span> luas = panjang * lebar;
+console.log(luas); <span class="comment">// Hasil: 50</span></code></pre>
+      </li>
+    </ol>
+  </div>
+<img src="Screenshot_20261028-142039.png" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <!-- REFLEKSI & EXIT TICKET -->
+  <div class="glass-card">
+    <h2>💡 F & G. Refleksi & Exit Ticket</h2>
+    <div class="answer-box" style="margin-bottom: 12px;">
+      <strong>Refleksi Pembelajaran Mendalam:</strong>
+      <ul>
+        <li><strong>Berkesadaran:</strong> Hari ini saya menyadari bahwa tipe data input dari <code>prompt()</code> perlu dikonversi ke angka dengan <code>Number()</code> agar dapat dihitung secara aritmatika.</li>
+        <li><strong>Bermakna:</strong> Materi ini dapat digunakan untuk membuat aplikasi kasir, kalkulator otomatis, maupun sistem pencatatan keuangan.</li>
+        <li><strong>Menggembirakan:</strong> Bagian pembelajaran yang paling saya sukai adalah saat berhasil menyelesaikan challenge Warung Digital dan Kalkulator Tabungan.</li>
+      </ul>
+    </div>
+
+    <div class="answer-box">
+      <strong>Exit Ticket:</strong>
+      <ol style="padding-left: 18px;">
+        <li><strong>Satu hal yang sudah saya kuasai:</strong> Menggunakan variabel dan operator aritmatika JavaScript.</li>
+        <li><strong>Satu hal yang masih membingungkan:</strong> Penggunaan konversi tipe data yang lebih kompleks.</li>
+        <li><strong>Satu hal yang ingin saya coba:</strong> Membuat mini game berbasis manipulasi logika JavaScript.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align: center; color: rgba(255, 255, 255, 0.8); font-size: 12px; margin-top: 20px; padding-bottom: 20px;">
+    SMKN 1 GARUT • Dasar-Dasar PPLG • JavaScript Input, Output & Aritmatika
+  </div>
+</div>
+</body>
+</html>
