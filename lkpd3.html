@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil LKPD JavaScript - Naila</title>
+    <style>
+        :root {
+            --primary-teal: #008080;
+            --dark-teal: #005656;
+            --light-teal: #e6f2f2;
+            --border-teal: #b2d8d8;
+            --bg-color: #f4f8f8;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 128, 128, 0.15);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-teal);
+            color: white;
+            padding: 25px 30px;
+            border-bottom: 5px solid var(--dark-teal);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            font-size: 14px;
+        }
+
+        .info-item strong {
+            display: inline-block;
+            width: 120px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background-color: #fff;
+            border: 1px solid var(--border-teal);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: var(--dark-teal);
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        code {
+            background-color: #f0f4f4;
+            color: var(--dark-teal);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+        }
+
+        .answer-box {
+            background-color: var(--light-teal);
+            border-left: 4px solid var(--primary-teal);
+            padding: 12px 15px;
+            margin-top: 10px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .answer-title {
+            font-weight: bold;
+            color: var(--dark-teal);
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-teal);
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: var(--primary-teal);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-teal);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light-teal);
+            color: var(--dark-teal);
+            font-size: 14px;
+            border-top: 1px solid var(--border-teal);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1>
+        <div><strong>Topik:</strong> JavaScript - String, Number, dan Konversi Data</div>
+        
+        <div class="info-grid">
+            <div class="info-item"><strong>Nama:</strong> Naila</div>
+            <div class="info-item"><strong>Kelas:</strong> X PPLG 2</div>
+            <div class="info-item"><strong>Satuan Pendidikan:</strong> SMKN 1 Garut</div>
+            <div class="info-item"><strong>Mata Pelajaran:</strong> Dasar-Dasar PPLG</div>
+            <div class="info-item"><strong>Alokasi Waktu:</strong> 2 x 45 menit</div>
+            <div class="info-item"><strong>File Eksperimen:</strong> lkpd_string_number_naila.js</div>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- TUJUAN PEMBELAJARAN -->
+        <div class="section">
+            <h2 class="section-title">A. TUJUAN PEMBELAJARAN</h2>
+            <p>Setelah menyelesaikan LKPD ini, peserta didik mampu:</p>
+            <ol>
+                <li>Membedakan String dan Number.</li>
+                <li>Menjelaskan bahwa <code>prompt()</code> menghasilkan String.</li>
+                <li>Menggunakan <code>Number()</code> dan <code>String()</code>.</li>
+                <li>Menganalisis kesalahan akibat tipe data.</li>
+                <li>Membuat program input dan perhitungan sederhana.</li>
+            </ol>
+        </div>
+
+        <!-- PETUNJUK KERJA -->
+        <div class="section">
+            <h2 class="section-title">B. PETUNJUK KERJA</h2>
+            <ul>
+                <li>Kerjakan mandiri terlebih dahulu.</li>
+                <li>Diskusikan melalui <em>Think Pair Share</em>.</li>
+            </ul>
+        </div>
+
+        <!-- AKTIVITAS 1 -->
+        <div class="section">
+            <h2 class="section-title">C. AKTIVITAS 1</h2>
+            <p>Prediksi hasil sebelum menjalankan kode. Jalankan kode dan amati. Simpan file sebagai <code>lkpd_string_number_naila.js</code>.</p>
+            <p><strong>EKSPERIMEN 10 + 20</strong></p>
+            <p>Jangan jalankan terlebih dahulu. Prediksikan hasil:</p>
+<pre>
+let a = "10";
+let b = "20";
+console.log(a + b);
+</pre>
+            <div class="answer-box">
+                <div class="answer-title">Pertanyaan & Jawaban Kamu:</div>
+                <ul>
+                    <li><strong>Apa output program?</strong> Outputnya adalah <code>1020</code>.</li>
+                    <li><strong>Mengapa hasil tersebut terjadi?</strong> Karena variabel <code>a</code> dan <code>b</code> berisi nilai bertipe String (ditandai dengan tanda petik). Operator <code>+</code> pada String berfungsi untuk penggabungan teks (konkatenasi), bukan penjumlahan matematika.</li>
+                    <li><strong>Apakah a dan b bertipe Number?</strong> Tidak, variabel <code>a</code> dan <code>b</code> bertipe String.</li>
+                </ul>
+                <p><strong>Uji sekarang. Apakah prediksimu benar? Jelaskan.</strong><br>
+                Ya, prediksi benar. Saat kode dijalankan di konsol JavaScript, hasilnya adalah "1020" karena sistem menggabungkan dua teks tersebut secara berurutan.</p>
+            </div>
+        </div>
+        <img src="Screenshot_20261104-103953.png"  width="360" style="max-width:100%; height:auto;">
+        <!-- AKTIVITAS 2 -->
+        <div class="section">
+             <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <h2 class="section-title">D. AKTIVITAS 2 - MENEMUKAN TIPE DATA</h2>
+            <p>Jalankan kode berikut:</p>
+<pre>
+let nama = "Asep";
+let umur = 16;
+console.log(typeof nama);
+console.log(typeof umur);
+</pre>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variabel</th>
+                        <th>Prediksi</th>
+                        <th>Hasil <code>typeof</code></th>
+                        <th>Kesimpulan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>nama</code></td>
+                        <td>string</td>
+                        <td>string</td>
+                        <td>Nilai di dalam tanda petik dibaca sebagai teks.</td>
+                    </tr>
+                    <tr>
+                        <td><code>umur</code></td>
+                        <td>number</td>
+                        <td>number</td>
+                        <td>Nilai berupa angka tanpa tanda petik dibaca sebagai angka numerik.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="answer-box">
+                <div class="answer-title">Temuan: Apa perbedaan String dan Number berdasarkan eksperimenmu?</div>
+                <p><strong>String</strong> adalah tipe data berupa karakter/teks yang diapit tanda petik, digunakan untuk menampilkan tulisan atau penggabungan karakter. Sedangkan <strong>Number</strong> adalah tipe data berupa angka numerik tanpa tanda petik yang dapat digunakan untuk operasi aritmatika matematika (seperti penjumlahan, pengurangan, perkalian, dan pembagian).</p>
+            </div>
+        </div> 
+<img src="Screenshot_20261104-104831.png" width="360" style="max-width:100%; height:auto;">
+        <!-- AKTIVITAS 3 -->
+        <div class="section">
+            <h2 class="section-title">E. AKTIVITAS 3 - KONVERSI STRING MENJADI NUMBER</h2>
+            <p>Perbaiki program agar menghasilkan 30. Gunakan <code>Number()</code>:</p>
+<pre>
+let a = "10";
+let b = "20";
+let hasil = Number(a) + Number(b);
+console.log(hasil);
+</pre>
+            <div class="answer-box">
+                <div class="answer-title">Catat hasil program:</div>
+                <p>Hasil program pada konsol adalah <code>30</code>. Fungsi <code>Number()</code> berhasil mengonversi teks "10" menjadi angka 10 dan teks "20" menjadi angka 20, sehingga operator <code>+</code> melakukan penjumlahan matematika.</p>
+            </div>
+        </div>
+            <img src="Screenshot_20261111-111131.png" width="360" style="max-width:100%; height:auto;">
+        <!-- AKTIVITAS 4 -->
+        <div class="section">
+            <h2 class="section-title">F. AKTIVITAS 4 - PROGRAM KASIR SEDERHANA</h2>
+            <p>Buat program yang meminta harga barang dan jumlah barang melalui <code>prompt()</code>, mengubah keduanya menjadi <code>Number</code>, lalu menghitung total harga.</p>
+<pre>
+let harga = Number(prompt("Masukkan harga: "));
+let jumlah = Number(prompt("Masukkan jumlah: "));
+let total = harga * jumlah;
+console.log("Total belanja = " + total);
+</pre>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Input Uji</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harga</td>
+                        <td>Rp 10.000</td>
+                    </tr>
+                    <tr>
+                        <td>Jumlah</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Total seharusnya</td>
+                        <td>Rp 50.000</td>
+                    </tr>
+                    <tr>
+                        <td>Total program</td>
+                        <td>Rp 50000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            <img src="Screenshot_20261111-122046.png" width="360" style="max-width:100%; height:auto;">
+        <!-- TANTANGAN -->
+        <div class="section">
+            <h2 class="section-title">G. TANTANGAN - PROGRAM HITUNG NILAI</h2>
+            <p>Buat program dengan input nilai tugas, UTS, dan UAS. Konversikan semua input menggunakan <code>Number()</code>, lalu hitung rata-rata dengan rumus <code>(tugas + UTS + UAS) / 3</code>.</p>
+            <div class="answer-box">
+                <div class="answer-title">Algoritma saya:</div>
+                <ol>
+                    <li>Menerima input nilai tugas dari pengguna via <code>prompt()</code> dan langsung mengonversinya ke tipe data angka menggunakan <code>Number()</code>.</li>
+                    <li>Menerima input nilai UTS dan UAS dari pengguna via <code>prompt()</code> lalu mengonversinya ke tipe data angka menggunakan <code>Number()</code>.</li>
+                    <li>Hitung rata-rata dengan mengoperasikan rumus <code>let rataRata = (tugas + uts + uas) / 3;</code>.</li>
+                    <li>Tampilkan hasil perhitungan rata-rata nilai ke layar/konsol.</li>
+                </ol>
+            </div>
+        </div>
+            <img src="Screenshot_20261111-123953.png" width="360" style="max-width:100%; height:auto;">
+       <!-- THINK PAIR SHARE -->
+        <div class="section">
+            <h2 class="section-title">H. THINK PAIR SHARE</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pertanyaan</th>
+                            <th>Jawaban</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mengapa <code>prompt()</code> perlu dikonversi jika hasilnya ingin dihitung?</td>
+                            <td>Karena secara bawaan (default), nilai yang dikembalikan oleh fungsi <code>prompt()</code> selalu bertipe data String, meskipun pengguna memasukkan angka.</td>
+                        </tr>
+                        <tr>
+                            <td>Apa perbedaan <code>"10"</code> dengan <code>10</code>?</td>
+                            <td><code>"10"</code> adalah String (teks), jika dijumlahkan akan digabungkan. Sedangkan <code>10</code> adalah Number (angka), jika dijumlahkan akan dihitung nilainya.</td>
+                        </tr>
+                        <tr>
+                            <td>Apa yang terjadi jika lupa <code>Number()</code>?</td>
+                            <td>Operasi penjumlahan akan menghasilkan penggabungan teks (konkatenasi) bukan hasil matematis. Misalnya input 10 dan 20 akan menjadi "1020".</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="answer-box">
+                <p><strong>Pair: Bandingkan jawaban dengan teman. Apakah sama? Mengapa bisa berbeda?</strong><br>
+                Jawaban sebagian besar sama pada inti teorinya, perbedaannya hanya terletak pada susunan kalimat penjelasan masing-masing.</p>
+                <p><strong>Share: Sampaikan satu temuan penting kepada kelas.</strong><br>
+                <em>Temuan penting:</em> Semua data input yang diambil menggunakan <code>prompt()</code> wajib diubah terlebih dahulu dengan <code>Number()</code> jika hendak dilakukan operasi aritmatika (terutama penjumlahan) agar tidak terjadi kesalahan logika program.</p>
+            </div>
+        </div>
+
+        <!-- REFLEKSI 3-2-1 -->
+        <div class="section">
+            <h2 class="section-title">I. REFLEKSI 3-2-1</h2>
+            <div class="answer-box">
+                <p><strong>3 hal yang saya pahami:</strong></p>
+                <ol>
+                    <li>Perbedaan  antara tipe data String (teks) dan Number (angka).</li>
+                    <li>Sifat fungsi <code>prompt()</code> yang selalu menghasilkan data bertipe String.</li>
+                    <li>Cara melakukan konversi tipe data String ke Number menggunakan fungsi <code>Number()</code>.</li>
+                </ol>
+                <p><strong>2 hal yang masih membingungkan:</strong></p>
+                <ol>
+                    <li>bagaimana jika isi dari variabel di kosongkan? </li>
+                    <li>Bagaimana cara memformat angka hasil perhitungan agar otomatis memiliki desimal atau format mata uang Rupiah.</li>
+                </ol>
+                <p><strong>1 hal yang ingin saya coba pada program berikutnya:</strong></p>
+                <p>Membuat aplikasi kalkulator interaktif sederhana dengan antarmuka berbasis HTML.</p>
+            </div>
+        </div>
+
+        <!-- PENILAIAN DIRI -->
+        <div class="section">
+            <h2 class="section-title">J. PENILAIAN DIRI</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pernyataan</th>
+                            <th class="center" style="width: 80px;">Ya</th>
+                            <th class="center" style="width: 80px;">Belum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Saya dapat membedakan String dan Number.</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                        <tr>
+                            <td>Saya memahami prompt() menghasilkan String.</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                        <tr>
+                            <td>Saya dapat menggunakan Number().</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                        <tr>
+                            <td>Saya dapat menggunakan String().</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                        <tr>
+                            <td>Saya dapat menemukan kesalahan tipe data.</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                        <tr>
+                            <td>Saya dapat membuat program input dan hitung sederhana.</td>
+                            <td class="center">✓</td>
+                            <td class="center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- RUBRIK PENILAIAN PRAKTIK -->
+        <div class="section">
+            <h2 class="section-title">K. RUBRIK PENILAIAN PRAKTIK</h2>
+            <!-- Pembungkus khusus agar tabel rubrik bisa di-scroll menyamping di HP -->
+            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                <table style="min-width: 600px;">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>4 - Sangat Baik</th>
+                            <th>3 - Baik</th>
+                            <th>2 - Cukup</th>
+                            <th>1 - Perlu Bimbingan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tipe data</strong></td>
+                            <td>Dapat membedakan String/Number dan menjelaskan detail.</td>
+                            <td>Dapat membedakan String/Number.</td>
+                            <td>Masih ada kekeliruan.</td>
+                            <td>Belum memahami.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Konversi</strong></td>
+                            <td>Tepat dan mandiri.</td>
+                            <td>Benar dengan sedikit arahan.</td>
+                            <td>Beberapa kesalahan.</td>
+                            <td>Belum mampu.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Program</strong></td>
+                            <td>Berjalan benar dan rapi.</td>
+                            <td>Sedikit kesalahan.</td>
+                            <td>Berjalan sebagian.</td>
+                            <td>Belum berjalan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pemecahan masalah</strong></td>
+                            <td>Menemukan dan memperbaiki mandiri.</td>
+                            <td>Memperbaiki dengan sedikit bantuan.</td>
+                            <td>Banyak bantuan.</td>
+                            <td>Belum mampu.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <strong>Catatan Guru:</strong>
+                <div style="border-bottom: 1px dashed var(--border-teal); height: 30px; margin-top: 5px;"></div>
+                <div style="border-bottom: 1px dashed var(--border-teal); height: 30px;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        LKPD JavaScript String, Number & Konversi Data &copy; SMKN 1 Garut - Naila (X PPLG 2)
+    </footer>
+</div>
+
+</body>
+</html>
